@@ -9,7 +9,7 @@ export default function Header() {
           <ul className="flex gap-4">
             {links.map((link) => (
               <li key={link}>
-                <a href="#" className="font-semibold text-3xl hover:text-yellow-500">
+                <a href="card" className="font-semibold text-3xl hover:text-yellow-500">
                   {link}
                 </a>
               </li>
