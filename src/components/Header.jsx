@@ -1,7 +1,9 @@
 import React from "react";
+import { NavLink } from 'react-router-dom'
+
 
 const links = [
-  { name: "Home", path: "/" },
+  { name: "Card", path: "/card" },
   { name: "Favorite Questions", path: "/FavoriteQuestions" },
   { name: "Contact", path: "/contact" },
 ];
@@ -13,12 +15,11 @@ export default function Header() {
           <ul className="flex gap-4">
             {links.map((link, index) => (
               <li key={index}>
-                <a
-                  href={link.path}
+                <NavLink to={link.path}
                   className="font-semibold text-3xl hover:text-yellow-500"
                 >
                   {link.name}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
