@@ -1,22 +1,18 @@
-import React, { useEffect } from "react";
-import Question from "./Question";
-import CorrectAnswer from "./CorrectAnswer";
+import React from "react";
 import { useTriviaStore } from "../stoer/triviaStore";
+import Question from "./Question";
+import Answers from "./Answers";
+
 
 export default function Card() {
-  const fetchQuestions = useTriviaStore((state) => state.setTrivia);
-
-  useEffect(() => {
-    fetchQuestions();
-  }, []);
-
+ 
   const questions = useTriviaStore((state) => state.questions);
   return (
-    <div className="flex flex-wrap gap-4 items-center justify-center p-4">
+    <div className="flex flex-wrap gap-4 justify-center p-4">
       {questions.map((question, index) => (
-        <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 bg-white rounded-lg shadow-md">
-          <Question question={question} index={index} />
-          <CorrectAnswer />
+        <div key={index} className="flex flex-col gap-4 sm:w-1/4 md:w-1/5 lg:w-1/6 p-4 bg-lime-100 rounded-lg shadow-md">
+          <Question  index={index} /> 
+          <Answers index={index} />
         </div>
       ))}
     </div>
