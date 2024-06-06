@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useTriviaStore } from "../stoer/triviaStore";
 import Star from "./Star";
 
